@@ -9,9 +9,9 @@ class ResultSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Result
-        fields = {
+        fields = (
             'quiz',
             'user',
             'score',
             'incorrect_answers'
-        }
+        )

@@ -5,11 +5,11 @@ from .models import Question, Answer
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
-        fields = {
+        fields = (
             'text',
             'quiz',
             'created_time',
-        }
+        )
 
 
 class AnswerSerializer(serializers.ModelSerializer):
@@ -17,9 +17,9 @@ class AnswerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Answer
-        fields = {
+        fields = (
             'text',
             'correct',
             'question',
             'created',
-        }
+        )

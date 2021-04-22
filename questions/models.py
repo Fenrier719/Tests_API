@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 from quizes.models import Quiz
 
 
@@ -22,3 +24,9 @@ class Answer(models.Model):
 
     def __str__(self):
         return f'Question: {self.question.text}, Answer: {self.text}, State: {self.correct}'
+
+
+class UserAnswer(models.Model):
+    user = models.ForeignKey(User, related_name='answers', on_delete=models.CASCADE)
+    questions = models.ForeignKey(Question, on_delete=models.CASCADE)
+    answer = models.ForeignKey(Answer, on_delete=models.CASCADE)

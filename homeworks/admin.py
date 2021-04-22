@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from homeworks.models import Homework, AnswerForHomework
+
+admin.site.register(Homework)
+admin.site.register(AnswerForHomework)

@@ -6,6 +6,7 @@ from django.urls import path, include
 
 apipatterns = [
     path('', include('authentication.urls')),
+    path('', include('homeworks.urls')),
 ]
 
 urlpatterns = [
